@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Upscaler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>4K Image Upscaler</h1>
+      <p class="lead">
+        Upload an image and the app will upscale it to a 4K resolution using the
+        built-in upscaler utilities.
+      </p>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <label for="image" class="label">Choose an image to upscale</label>
+        <input type="file" id="image" name="image" accept="image/*" required />
+        <button type="submit">Upscale to 4K</button>
+      </form>
+
+      {% if download_url %}
+        <section class="result">
+          <h2>Upscaling complete</h2>
+          <p>
+            Your upscaled version of <strong>{{ original_filename }}</strong> is ready.
+          </p>
+          <a class="download" href="{{ download_url }}">Download 4K Image</a>
+        </section>
+      {% endif %}
+    </main>
+  </body>
+</html>
