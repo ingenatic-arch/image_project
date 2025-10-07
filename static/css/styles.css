@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #101218;
+  color: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1f2430, #0b0d12);
+}
+
+.container {
+  width: min(90vw, 560px);
+  background: rgba(18, 22, 30, 0.85);
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.lead {
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: #c3c8d4;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.label {
+  font-weight: 600;
+}
+
+input[type="file"] {
+  padding: 0.75rem;
+  border: 1px dashed #4f5870;
+  border-radius: 10px;
+  background: rgba(12, 15, 22, 0.8);
+  color: inherit;
+}
+
+button {
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5c6bf6, #8896ff);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(92, 107, 246, 0.35);
+}
+
+.flash-messages {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 95, 109, 0.12);
+  color: #ff9da5;
+}
+
+.result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(58, 73, 116, 0.28);
+  text-align: center;
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #25d48a, #32f0a6);
+  color: #04121a;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download:hover,
+.download:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(37, 212, 138, 0.35);
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+}
